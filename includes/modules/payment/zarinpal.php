@@ -129,7 +129,11 @@
 								)
 		);
 	  if ($res->Status == 100)
+	 {
         @$res = tep_db_query("SELECT id, used FROM " .ZARINPAL_TABLE_ERECEIPT. " WHERE refer_number='" .$Authority. "'");
+	 }else{
+	 	echo'ERR: '.$res->Status;
+	 }
         @$numrow = tep_db_num_rows($res->Status);
         if ($numrow == 0) {
           @tep_db_query("INSERT INTO " .ZARINPAL_TABLE_ERECEIPT. " VALUES ('','" .$orderid. "','" .$amount. "','" .$Authority. "','1','0','1')");
