@@ -110,7 +110,7 @@ $res = $this->client->PaymentRequest(
 		}
     } else {
       
-    	$output .= "OrderID" . $params[orderId] . "<br>***Status:". $status . "--Au:" . $res->Authority ."--"."Couldn't Validate Payment with Parsian<br> " . $this->errorstr[1] ;
+    	$output .= "OrderID" . $params[orderId] . "<br>***Status:". $res->Status . "--Au:" . $res->Authority ."--"."Couldn't Validate Payment with Parsian<br> " . $this->errorstr[1] ;
 
     }
   }
